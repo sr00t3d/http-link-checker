@@ -4,6 +4,8 @@
 
 [![License](https://img.shields.io/badge/license-Apache--2.0-green.svg)](LICENSE) [![Version](https://img.shields.io/badge/version-2.0.0-blue.svg)](https://github.com/sr00t3d/http-link-checker/releases) [![Shell](https://img.shields.io/badge/bash-4.0+-blue.svg)](https://www.gnu.org/software/bash/)
 
+![HTTP Link Checker Cover](http-link-checker-cover.webp)
+
 `link-checker.sh` is a bounded Bash CLI crawler for auditing website HTTP response codes, detecting broken links (`4xx`/`5xx`), and inspecting redirects (`3xx`) — designed for post-deploy verification, technical SEO audits, and CI/CD pipelines.
 
 > **Historical Credits:** Refactored from the original `checker.sh` utility by **Percio Andrade (Percio Castelo)**, upgraded with bounded crawl depth, `robots.txt` compliance by default, exact broken/redirect URL reporting, CI exit codes, and structured `table`/`json`/`csv` outputs.
