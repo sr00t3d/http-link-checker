@@ -41,6 +41,26 @@ link-checker --depth 2 --show-redirects -o json https://staging.example.com
 link-checker --depth 2 --show-redirects -o csv https://example.com
 ```
 
+## Direct Execution & Windows PowerShell
+
+### Linux / macOS (Direct Execution)
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/sr00t3d/http-link-checker/main/link-checker.sh) https://example.com
+```
+
+### Windows (PowerShell `link-checker.ps1`)
+Zero external dependencies — works natively on **Windows PowerShell 5.1+** and **PowerShell 7+**:
+
+```powershell
+# Direct execution (no clone required)
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/sr00t3d/http-link-checker/main/link-checker.ps1))) https://example.com
+
+# Local execution
+.\link-checker.ps1 https://example.com
+.\link-checker.ps1 https://example.com -MaxDepth 2 -MaxUrls 100 -OnlyErrors -ExitCode
+.\link-checker.ps1 https://example.com -Output json
+```
+
 ## Real Output Example
 
 ### Table Output (`link-checker.sh --depth 2 --ignore-robots --show-redirects --exit-code --no-color http://127.0.0.1:18999/`)
@@ -83,13 +103,3 @@ HTTP Status Summary (total responses: 8):
 ## License
 
 Licensed under the [Apache License 2.0](LICENSE).
-
-## Windows (PowerShell `link-checker.ps1`)
-
-Zero external dependencies — uses native `.NET HttpClient` on **Windows PowerShell 5.1** and **PowerShell 7+**:
-
-```powershell
-.\link-checker.ps1 https://example.com
-.\link-checker.ps1 https://example.com -MaxDepth 2 -MaxUrls 100 -OnlyErrors -ExitCode
-.\link-checker.ps1 https://example.com -Output json
-```
