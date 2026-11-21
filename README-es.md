@@ -22,3 +22,13 @@ link-checker --depth 2 --show-redirects -o csv https://example.com
 ## Licencia
 
 Licenciado bajo la [Apache License 2.0](LICENSE).
+
+## Windows (PowerShell `link-checker.ps1`)
+
+Cero dependencias externas — usa `.NET HttpClient` nativo en **Windows PowerShell 5.1** y **PowerShell 7+**:
+
+```powershell
+.\link-checker.ps1 https://example.com
+.\link-checker.ps1 https://example.com -MaxDepth 2 -MaxUrls 100 -OnlyErrors -ExitCode
+.\link-checker.ps1 https://example.com -Output json
+```

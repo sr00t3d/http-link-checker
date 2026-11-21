@@ -56,3 +56,13 @@ HTTP Status Summary (total responses: 8):
 ## Licença
 
 Licenciado sob a [Apache License 2.0](LICENSE).
+
+## Windows (PowerShell `link-checker.ps1`)
+
+Zero dependências externas — usa `.NET HttpClient` nativo no **Windows PowerShell 5.1** e **PowerShell 7+**:
+
+```powershell
+.\link-checker.ps1 https://example.com
+.\link-checker.ps1 https://example.com -MaxDepth 2 -MaxUrls 100 -OnlyErrors -ExitCode
+.\link-checker.ps1 https://example.com -Output json
+```
